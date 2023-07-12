@@ -1,19 +1,14 @@
+import displayWeather from './display.js'
 
-import key from './secret.js';
-import {fetchWeatherData, processWeatherData} from './weather.js';
+let city = 'Vancouver';
+displayWeather(city);
 
-async function displayWeather(city){
-    let api_data = await fetchWeatherData(city, key);
-    let data = await processWeatherData(api_data);
+let input = document.querySelector('.search-field');
+let submit = document.querySelector('.button');
 
-    console.log(data.location);
-    console.log(data.region);
-    console.log(data.condition);    
-    console.log(data.temp);
-    console.log(data.feelsLike);
-    console.log(data.wind);
-    console.log(data.humidity);
-}
-
-
-displayWeather('Vancouver');
+submit.addEventListener('click', () => {
+    city = input.value;
+    console.log(city);
+    displayWeather(city);
+    input.textContent = '';
+})
