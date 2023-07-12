@@ -18,15 +18,3 @@ async function processWeatherData(data){
 }
 
 export { fetchWeatherData, processWeatherData };
-/* 
-    current
-        - condition: {text: 'Sunny'}
-        - temp_c
-        - feelslike_c
-        - wind_kph
-        - humidity
-    location
-        - name
-        - region
-*/
-
